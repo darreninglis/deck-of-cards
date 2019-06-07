@@ -63,7 +63,6 @@
 
 import React, { Component } from 'react';
 import Card from './Card';
-import './Deck.css';
 import axios from 'axios';
 const API_BASE_URL = 'https://www.deckofcardsapi.com/api/deck';
 
