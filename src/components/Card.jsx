@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Card() {
+export default function Card({ image, name, key }) {
 	// may need to make this a class to stop re render
 	let angle = Math.random() * 90 - 45;
 	let xPos = Math.random() * 40 - 20;
@@ -8,11 +8,6 @@ export default function Card() {
 	let transform = `translate(${xPos}px, ${yPos}px) rotate(${angle}deg)`;
 
 	return (
-		<img
-			className='Card'
-			src={this.props.image}
-			alt={this.props.name}
-			style={{ transform }}
-		/>
+		<img className='Card' src={image} alt={name} style={{ transform }} />
 	);
 }
