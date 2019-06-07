@@ -17,18 +17,43 @@ export default class Deck extends Component {
 		});
 	}
 
+	// async getCard() {
+	// 	let id = this.state.deck.deck_id;
+	// 	try {
+	// 		let cardUrl = `${API_BASE_URL}/${id}/draw/`;
+	// 		//make request using deck id
+	// 		let cardRes = await axios.get(cardUrl);
+	// 		if (!cardRes.data.success) {
+	// 			throw new Error('No Cards remaining');
+	// 		}
+
+	// 		//set state using new card info
+	// 		let card = cardRes.data.card[0];
+	// 		this.setState((st) => ({
+	// 			drawn: [
+	// 				...st.drawn,
+	// 				{
+	// 					id: card.code,
+	// 					image: card.image,
+	// 					name: `${card.value} of ${card.suit}`
+	// 				}
+	// 			]
+	// 		}));
+	// 	} catch (err) {
+	// 		alert(err);
+	// 	}
+	// }
+
 	async getCard() {
-		let id = this.state.deck.deck_id;
+		let deck_id = this.state.deck.deck_id;
 		try {
-			let cardUrl = `${API_BASE_URL}/${id}/draw/`;
-			//make request using deck id
+			let cardUrl = `${API_BASE_URL}/${deck_id}/draw/`;
 			let cardRes = await axios.get(cardUrl);
 			if (!cardRes.data.success) {
-				throw new Error('No Cards remaining');
+				throw new Error('No card remaining!');
 			}
-
-			//set state using new card info
-			let card = cardRes.data.card[0];
+			let card = cardRes.data.cards[0];
+			console.log(cardRes.data);
 			this.setState((st) => ({
 				drawn: [
 					...st.drawn,
