@@ -36,17 +36,18 @@
 }
 
 button {
-	background: none;
+	background-color: #4caf50;
 	outline: none;
 	font: inherit;
 	margin: 0.5em;
 	padding: 1em 2em;
-	color: #009688;
-	transition: 0.25s;
+	transition: 0.05s;
+	border-radius: 0.5em;
+	border-color: #4caf50;
 }
 
 button:hover {
-	border-color: #4caf50;
+	border-color: #306e32;
 	color: white;
-	box-shadow: inset 0 0 0 2em #4caf50;
+	box-shadow: inset 0 0 0 2em #306e32;
 }
